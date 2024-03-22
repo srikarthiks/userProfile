@@ -71,7 +71,7 @@ function getUserInfo($userId) {
           WHERE u.id = ?
           GROUP BY u.id";
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param('i', $userId)
+  $stmt->bind_param('i', $userId);
   $stmt->execute();
   $result = $stmt->get_result();
   if ($result->num_rows > 0) {
